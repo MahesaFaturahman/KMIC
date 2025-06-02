@@ -74,10 +74,11 @@
         nav ul {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         nav ul li {
-            margin-left: 30px;
+            margin-left: 20px;
         }
         
         nav ul li a {
@@ -105,6 +106,31 @@
         
         nav ul li a:hover::after {
             width: 100%;
+        }
+        
+        .language-switcher {
+            display: flex;
+            margin-left: 20px;
+        }
+        
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .language-switcher button.active {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .language-switcher button:hover:not(.active) {
+            color: var(--secondary);
         }
         
         .mobile-menu-btn {
@@ -609,6 +635,12 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 20px;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -641,16 +673,23 @@
                 <img src="https://via.placeholder.com/50x50?text=KMIC" alt="KMIC Logo">
                 <div class="logo-text">
                     <h1>KMIC Trust and Partners</h1>
-                    <p>Professional Financial, Trading, and Legal Solutions</p>
+                    <p class="lang-en">Professional Financial, Trading, and Legal Solutions</p>
+                    <p class="lang-id" style="display:none;">Solusi Keuangan, Perdagangan, dan Hukum Profesional</p>
                 </div>
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#software">Software Solutions</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="lang-en">Home</a><a href="#home" class="lang-id" style="display:none;">Beranda</a></li>
+                    <li><a href="#about" class="lang-en">About Us</a><a href="#about" class="lang-id" style="display:none;">Tentang Kami</a></li>
+                    <li><a href="#services" class="lang-en">Services</a><a href="#services" class="lang-id" style="display:none;">Layanan</a></li>
+                    <li><a href="#software" class="lang-en">Software</a><a href="#software" class="lang-id" style="display:none;">Perangkat Lunak</a></li>
+                    <li><a href="#contact" class="lang-en">Contact</a><a href="#contact" class="lang-id" style="display:none;">Kontak</a></li>
+                    <li>
+                        <div class="language-switcher">
+                            <button id="lang-en" class="active">EN</button>
+                            <button id="lang-id">ID</button>
+                        </div>
+                    </li>
                 </ul>
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -663,11 +702,15 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Your Trusted Partner in Financial, Trading, and Legal Solutions</h1>
-                <p>"Bekerja Profesional dan Menjunjung Tinggi Kredibilitas, Integritas, dan Kerahasiaan Klien."</p>
+                <h1 class="lang-en">Your Trusted Partner in Financial, Trading, and Legal Solutions</h1>
+                <h1 class="lang-id" style="display:none;">Mitra Terpercaya untuk Solusi Keuangan, Perdagangan, dan Hukum</h1>
+                <p class="lang-en">"Working Professionally and Upholding Client Credibility, Integrity, and Confidentiality."</p>
+                <p class="lang-id" style="display:none;">"Bekerja Profesional dan Menjunjung Tinggi Kredibilitas, Integritas, dan Kerahasiaan Klien."</p>
                 <div class="btn-group">
-                    <a href="#contact" class="btn">Get in Touch</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
+                    <a href="#contact" class="btn lang-en">Get in Touch</a>
+                    <a href="#contact" class="btn lang-id" style="display:none;">Hubungi Kami</a>
+                    <a href="#services" class="btn btn-outline lang-en">Our Services</a>
+                    <a href="#services" class="btn btn-outline lang-id" style="display:none;">Layanan Kami</a>
                 </div>
             </div>
         </div>
@@ -677,15 +720,21 @@
     <section class="section" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Us</h2>
-                <p>KMIC Trust and Partners is a comprehensive financial, trading, technology, and legal services provider offering integrated solutions for businesses.</p>
+                <h2 class="lang-en">About Us</h2>
+                <h2 class="lang-id" style="display:none;">Tentang Kami</h2>
+                <p class="lang-en">KMIC Trust and Partners is a comprehensive financial, trading, technology, and legal services provider offering integrated solutions for businesses.</p>
+                <p class="lang-id" style="display:none;">KMIC Trust and Partners adalah penyedia layanan keuangan, perdagangan, teknologi, dan hukum yang menyediakan solusi terpadu untuk bisnis.</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Professional Solutions for Your Business Needs</h3>
-                    <p>KMIC Trust and Partners is a financial institution that provides comprehensive services in finance, trade, technology, and legal matters. We offer complete solutions for funding needs, commodity trading, information technology development, as well as legal and investigative services.</p>
-                    <p>We serve as a strategic partner for both national and international clients who need support in financial transactions and business infrastructure strengthening.</p>
-                    <p>Our team consists of experienced professionals in their respective fields who are committed to providing the best service with high standards of credibility, integrity, and client confidentiality.</p>
+                    <h3 class="lang-en">Professional Solutions for Your Business Needs</h3>
+                    <h3 class="lang-id" style="display:none;">Solusi Profesional untuk Kebutuhan Bisnis Anda</h3>
+                    <p class="lang-en">KMIC Trust and Partners is a financial institution that provides comprehensive services in finance, trade, technology, and legal matters. We offer complete solutions for funding needs, commodity trading, information technology development, as well as legal and investigative services.</p>
+                    <p class="lang-id" style="display:none;">KMIC Trust and Partners adalah lembaga keuangan yang menyediakan layanan komprehensif di bidang keuangan, perdagangan, teknologi, dan hukum. Kami menawarkan solusi lengkap untuk kebutuhan pendanaan, perdagangan komoditas, pengembangan teknologi informasi, serta layanan hukum dan investigasi.</p>
+                    <p class="lang-en">We serve as a strategic partner for both national and international clients who need support in financial transactions and business infrastructure strengthening.</p>
+                    <p class="lang-id" style="display:none;">Kami hadir sebagai mitra strategis bagi klien nasional dan internasional yang membutuhkan dukungan dalam transaksi keuangan dan penguatan infrastruktur bisnis.</p>
+                    <p class="lang-en">Our team consists of experienced professionals in their respective fields who are committed to providing the best service with high standards of credibility, integrity, and client confidentiality.</p>
+                    <p class="lang-id" style="display:none;">Tim kami terdiri dari para profesional berpengalaman di bidangnya masing-masing yang berkomitmen memberikan layanan terbaik dengan standar kredibilitas, integritas, dan kerahasiaan klien yang tinggi.</p>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="KMIC Team">
@@ -700,18 +749,28 @@
             <div class="mv-container">
                 <div class="mv-box">
                     <i class="fas fa-eye"></i>
-                    <h3>Our Vision</h3>
-                    <p>To become a trusted partner in providing innovative, efficient, and credible financial, technological, and legal solutions to support national and global economic development.</p>
+                    <h3 class="lang-en">Our Vision</h3>
+                    <h3 class="lang-id" style="display:none;">Visi Kami</h3>
+                    <p class="lang-en">To become a trusted partner in providing innovative, efficient, and credible financial, technological, and legal solutions to support national and global economic development.</p>
+                    <p class="lang-id" style="display:none;">Menjadi mitra terpercaya dalam memberikan solusi keuangan, teknologi, dan hukum yang inovatif, efisien, dan kredibel guna mendukung pembangunan ekonomi nasional dan global.</p>
                 </div>
                 <div class="mv-box">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Our Mission</h3>
-                    <ul style="text-align: left; padding-left: 20px;">
+                    <h3 class="lang-en">Our Mission</h3>
+                    <h3 class="lang-id" style="display:none;">Misi Kami</h3>
+                    <ul class="lang-en" style="text-align: left; padding-left: 20px;">
                         <li>Provide project-based alternative funding and guarantees</li>
                         <li>Facilitate cross-border financial transactions with modern systems</li>
                         <li>Provide quality commodity trading products and services</li>
                         <li>Develop and implement application technology for multi-sector operations</li>
                         <li>Provide professional legal and investigative services</li>
+                    </ul>
+                    <ul class="lang-id" style="text-align: left; padding-left: 20px; display:none;">
+                        <li>Menyediakan pendanaan alternatif berbasis proyek dan jaminan</li>
+                        <li>Memfasilitasi transaksi keuangan lintas negara dengan sistem modern</li>
+                        <li>Menyediakan produk dan layanan perdagangan komoditas berkualitas</li>
+                        <li>Mengembangkan dan mengimplementasikan teknologi aplikasi untuk operasional multi sektor</li>
+                        <li>Memberikan jasa hukum dan investigasi yang profesional</li>
                     </ul>
                 </div>
             </div>
@@ -722,8 +781,10 @@
     <section class="section services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions to meet your business needs across multiple sectors</p>
+                <h2 class="lang-en">Our Services</h2>
+                <h2 class="lang-id" style="display:none;">Layanan Kami</h2>
+                <p class="lang-en">Comprehensive solutions to meet your business needs across multiple sectors</p>
+                <p class="lang-id" style="display:none;">Solusi komprehensif untuk memenuhi kebutuhan bisnis Anda di berbagai sektor</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -731,14 +792,22 @@
                         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Financial Services">
                     </div>
                     <div class="service-content">
-                        <h3>Financial Services</h3>
-                        <p>Comprehensive financial solutions for your business needs:</p>
-                        <ul>
+                        <h3 class="lang-en">Financial Services</h3>
+                        <h3 class="lang-id" style="display:none;">Layanan Keuangan</h3>
+                        <p class="lang-en">Comprehensive financial solutions for your business needs:</p>
+                        <p class="lang-id" style="display:none;">Solusi keuangan komprehensif untuk kebutuhan bisnis Anda:</p>
+                        <ul class="lang-en">
                             <li>PO, Invoice, SPK, PKS, and Contract Financing</li>
                             <li>Funding with collateral (Land, Buildings, SKBDN, L/C, BG, SBLC)</li>
                             <li>International financial transactions: IPIP, FIN103, MT103, GPI, Trading Program, etc.</li>
                         </ul>
-                        <a href="#contact" class="btn">Inquire Now</a>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Pembiayaan PO, Invoice, SPK, PKS, dan Kontrak</li>
+                            <li>Pendanaan dengan jaminan (Tanah, Bangunan, SKBDN, L/C, BG, SBLC)</li>
+                            <li>Transaksi keuangan internasional: IPIP, FIN103, MT103, GPI, Trading Program, dll.</li>
+                        </ul>
+                        <a href="#contact" class="btn lang-en">Inquire Now</a>
+                        <a href="#contact" class="btn lang-id" style="display:none;">Tanya Sekarang</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -746,14 +815,22 @@
                         <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commodity Trading">
                     </div>
                     <div class="service-content">
-                        <h3>Commodity Trading</h3>
-                        <p>Quality products for various industries:</p>
-                        <ul>
+                        <h3 class="lang-en">Commodity Trading</h3>
+                        <h3 class="lang-id" style="display:none;">Perdagangan Komoditas</h3>
+                        <p class="lang-en">Quality products for various industries:</p>
+                        <p class="lang-id" style="display:none;">Produk berkualitas untuk berbagai industri:</p>
+                        <ul class="lang-en">
                             <li>Fertilizer Sales (Solid, Liquid)</li>
                             <li>Oil & Gas Products (B35, B40, B100, HSD, etc.)</li>
                             <li>Cooking Oil Sales (CP8, CP10)</li>
                         </ul>
-                        <a href="#contact" class="btn">Inquire Now</a>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Penjualan Pupuk (Padat, Cair)</li>
+                            <li>Produk Migas (B35, B40, B100, HSD, dll.)</li>
+                            <li>Penjualan Minyak Goreng (CP8, CP10)</li>
+                        </ul>
+                        <a href="#contact" class="btn lang-en">Inquire Now</a>
+                        <a href="#contact" class="btn lang-id" style="display:none;">Tanya Sekarang</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -761,9 +838,11 @@
                         <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a9e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contractor Projects">
                     </div>
                     <div class="service-content">
-                        <h3>Contractor Projects</h3>
-                        <p>Project provision for various government ministries:</p>
-                        <ul>
+                        <h3 class="lang-en">Contractor Projects</h3>
+                        <h3 class="lang-id" style="display:none;">Proyek Kontraktor</h3>
+                        <p class="lang-en">Project provision for various government ministries:</p>
+                        <p class="lang-id" style="display:none;">Penyediaan proyek untuk berbagai kementerian:</p>
+                        <ul class="lang-en">
                             <li>Ministry of Law and Human Rights</li>
                             <li>Ministry of Villages</li>
                             <li>Ministry of Youth and Sports</li>
@@ -771,7 +850,16 @@
                             <li>Ministry of Defense</li>
                             <li>And other ministries</li>
                         </ul>
-                        <a href="#contact" class="btn">Inquire Now</a>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Kementerian Hukum dan HAM</li>
+                            <li>Kementerian Desa</li>
+                            <li>Kementerian Pemuda dan Olahraga</li>
+                            <li>Kementerian Kesehatan</li>
+                            <li>Kementerian Pertahanan</li>
+                            <li>Dan kementerian lainnya</li>
+                        </ul>
+                        <a href="#contact" class="btn lang-en">Inquire Now</a>
+                        <a href="#contact" class="btn lang-id" style="display:none;">Tanya Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -782,23 +870,35 @@
     <section class="section software-services" id="software">
         <div class="container">
             <div class="section-title">
-                <h2>Software Solutions</h2>
-                <p>Custom application development and maintenance services tailored to your business needs</p>
+                <h2 class="lang-en">Software Solutions</h2>
+                <h2 class="lang-id" style="display:none;">Solusi Perangkat Lunak</h2>
+                <p class="lang-en">Custom application development and maintenance services tailored to your business needs</p>
+                <p class="lang-id" style="display:none;">Layanan pengembangan dan pemeliharaan aplikasi khusus yang disesuaikan dengan kebutuhan bisnis Anda</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Software House Services – Custom Applications & Maintenance</h3>
-                    <p>We provide application development services customized to client needs, from the planning stage, development, to ongoing maintenance.</p>
+                    <h3 class="lang-en">Software House Services – Custom Applications & Maintenance</h3>
+                    <h3 class="lang-id" style="display:none;">Layanan Software House – Aplikasi Kustom & Maintenance</h3>
+                    <p class="lang-en">We provide application development services customized to client needs, from the planning stage, development, to ongoing maintenance.</p>
+                    <p class="lang-id" style="display:none;">Kami menyediakan layanan pengembangan aplikasi yang disesuaikan dengan kebutuhan klien, mulai dari tahap perencanaan, pengembangan, hingga pemeliharaan berkelanjutan.</p>
                     
-                    <h4 style="margin-top: 20px; color: var(--primary);">Maintenance Services:</h4>
-                    <ul style="margin-bottom: 20px;">
+                    <h4 style="margin-top: 20px; color: var(--primary);" class="lang-en">Maintenance Services:</h4>
+                    <h4 style="margin-top: 20px; color: var(--primary); display:none;" class="lang-id">Layanan Pemeliharaan:</h4>
+                    <ul class="lang-en" style="margin-bottom: 20px;">
                         <li>Periodic system and server maintenance</li>
                         <li>Feature updates and security patches</li>
                         <li>24/7 support services for troubleshooting</li>
                         <li>Performance audits and application optimization</li>
                     </ul>
+                    <ul class="lang-id" style="margin-bottom: 20px; display:none;">
+                        <li>Pemeliharaan berkala sistem dan server</li>
+                        <li>Update fitur dan patch keamanan</li>
+                        <li>Layanan dukungan 24/7 untuk troubleshooting</li>
+                        <li>Audit performa dan optimalisasi aplikasi</li>
+                    </ul>
                     
-                    <a href="#contact" class="btn">Request Consultation</a>
+                    <a href="#contact" class="btn lang-en">Request Consultation</a>
+                    <a href="#contact" class="btn lang-id" style="display:none;">Minta Konsultasi</a>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Software Development">
@@ -806,80 +906,62 @@
             </div>
             
             <div style="margin-top: 50px;">
-                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Types of Applications We Develop</h3>
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);" class="lang-en">Types of Applications We Develop</h3>
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary); display:none;" class="lang-id">Jenis Aplikasi yang Kami Kembangkan</h3>
                 <div class="software-grid">
                     <div class="software-item">
-                        <h4>Business Applications</h4>
-                        <ul>
-                            <li>Purchasing Systems</li>
                             <li>Inventory Management</li>
-                            <li>HR Systems</li>
-                            <li>Production Systems</li>
-                            <li>Management Systems</li>
-                            <li>Financial Systems</li>
+                            <li>HR & Payroll Applications</li>
+                            <li>CRM & ERP</li>
+                        </ul>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Sistem Pembelian</li>
+                            <li>Manajemen Inventaris</li>
+                            <li>Aplikasi HR & Payroll</li>
+                            <li>CRM & ERP</li>
                         </ul>
                     </div>
                     <div class="software-item">
-                        <h4>Special Sector Applications</h4>
-                        <ul>
-                            <li>MBG (Nutritious Food)</li>
-                            <li>Agriculture</li>
-                            <li>Fisheries</li>
-                            <li>Transportation</li>
-                            <li>Trade</li>
+                        <h4 class="lang-en">E-Commerce Platforms</h4>
+                        <h4 class="lang-id" style="display:none;">Platform E-Commerce</h4>
+                        <ul class="lang-en">
+                            <li>Marketplace Applications</li>
+                            <li>Online Storefronts</li>
+                            <li>Payment Gateway Integration</li>
+                        </ul>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Aplikasi Marketplace</li>
+                            <li>Toko Online</li>
+                            <li>Integrasi Payment Gateway</li>
                         </ul>
                     </div>
                     <div class="software-item">
-                        <h4>Industrial Applications</h4>
-                        <ul>
-                            <li>Factory Systems</li>
-                            <li>Funding and Financing Process Systems</li>
-                            <li>Supply Chain Management</li>
+                        <h4 class="lang-en">Mobile Apps</h4>
+                        <h4 class="lang-id" style="display:none;">Aplikasi Mobile</h4>
+                        <ul class="lang-en">
+                            <li>Android & iOS Development</li>
+                            <li>Progressive Web Apps (PWA)</li>
+                            <li>Hybrid App Solutions</li>
+                        </ul>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Pengembangan Android & iOS</li>
+                            <li>Progressive Web Apps (PWA)</li>
+                            <li>Solusi Hybrid App</li>
                         </ul>
                     </div>
                     <div class="software-item">
-                        <h4>Administrative Applications</h4>
-                        <ul>
-                            <li>Government Internal Systems</li>
-                            <li>Corporate Administration</li>
-                            <li>Document Management</li>
+                        <h4 class="lang-en">Custom Solutions</h4>
+                        <h4 class="lang-id" style="display:none;">Solusi Kustom</h4>
+                        <ul class="lang-en">
+                            <li>Business Process Automation</li>
+                            <li>Custom Dashboard & Reporting</li>
+                            <li>Integration with Third-Party APIs</li>
                         </ul>
-                    </div>
-                    <div class="software-item">
-                        <h4>Custom Systems</h4>
-                        <ul>
-                            <li>Tailored to client specifications</li>
-                            <li>Unique business process solutions</li>
-                            <li>Specialized industry requirements</li>
+                        <ul class="lang-id" style="display:none;">
+                            <li>Otomasi Proses Bisnis</li>
+                            <li>Dashboard & Laporan Kustom</li>
+                            <li>Integrasi dengan API Pihak Ketiga</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Security Services -->
-    <section class="section" style="background-color: var(--primary); color: white;">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">Security & Investigative Services</h2>
-                <p>Professional solutions for your security and legal needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80" alt="Investigative Services">
-                    </div>
-                    <div class="service-content">
-                        <h3>Security & Investigative Services</h3>
-                        <ul>
-                            <li>Procurement and training of investigative tools</li>
-                            <li>Professional investigative services</li>
-                            <li>Legal services, people tracing, and property</li>
-                            <li>Background checks and due diligence</li>
-                            <li>Asset protection services</li>
-                        </ul>
-                        <a href="#contact" class="btn">Contact Our Team</a>
                     </div>
                 </div>
             </div>
@@ -889,34 +971,31 @@
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team for professional consultation and services</p>
-            </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Let's Discuss Your Project</h3>
-                    <p>Our team is ready to assist you with any questions about our services or to discuss how we can help with your specific needs.</p>
-                    
+                    <h3 class="lang-en">Contact Us</h3>
+                    <h3 class="lang-id" style="display:none;">Hubungi Kami</h3>
+                    <p class="lang-en">Ready to discuss your needs? Reach out to our team for a consultation or more information.</p>
+                    <p class="lang-id" style="display:none;">Siap untuk berdiskusi? Hubungi tim kami untuk konsultasi atau informasi lebih lanjut.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Office Address</h4>
-                                <p>Menara Bidakara 2 Annex Building (Bina Sentra), Lantai 4<br>
-                                Jl. Gatot Subroto Kav. 71–75, Menteng Dalam, Tebet<br>
-                                Jakarta Selatan 12870</p>
-                            </div>
+                            <span>Jl. Contoh Alamat No. 123, Jakarta, Indonesia</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:kmicprojects@gmail.com">kmicprojects@gmail.com</a></p>
-                            </div>
+                            <span>info@kmicpartners.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 812-3456-7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span class="lang-en">Mon-Fri: 09.00 - 17.00 WIB</span>
+                            <span class="lang-id" style="display:none;">Senin-Jumat: 09.00 - 17.00 WIB</span>
                         </div>
                     </div>
-                    
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -924,144 +1003,100 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="financial">Financial Services</option>
-                                <option value="trading">Commodity Trading</option>
-                                <option value="contractor">Contractor Projects</option>
-                                <option value="software">Software Development</option>
-                                <option value="security">Security & Investigative</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+                <form class="contact-form" autocomplete="off">
+                    <div class="form-group">
+                        <label class="lang-en" for="name">Full Name</label>
+                        <label class="lang-id" for="name" style="display:none;">Nama Lengkap</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-en" for="email">Email</label>
+                        <label class="lang-id" for="email" style="display:none;">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-en" for="subject">Subject</label>
+                        <label class="lang-id" for="subject" style="display:none;">Subjek</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-en" for="message">Message</label>
+                        <label class="lang-id" for="message" style="display:none;">Pesan</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn lang-en">Send Message</button>
+                    <button type="submit" class="btn lang-id" style="display:none;">Kirim Pesan</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>KMIC Trust and Partners</h3>
-                    <p>"Working Professionally and Upholding Client Credibility, Integrity, and Confidentiality."</p>
-                    <p>Your trusted partner in providing integrated solutions between finance, technology, trade, and law.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#software">Software Solutions</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services">Financial Services</a></li>
-                        <li><a href="#services">Commodity Trading</a></li>
-                        <li><a href="#services">Contractor Projects</a></li>
-                        <li><a href="#software">Software Development</a></li>
-                        <li><a href="#services">Security & Investigative</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Menara Bidakara 2 Annex Building, Lantai 4</p>
-                    <p><i class="fas fa-envelope"></i> kmicprojects@gmail.com</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>KMIC Trust and Partners</h3>
+                <p class="lang-en">Your trusted partner for financial, trading, technology, and legal solutions.</p>
+                <p class="lang-id" style="display:none;">Mitra terpercaya Anda untuk solusi keuangan, perdagangan, teknologi, dan hukum.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 KMIC Trust and Partners. All Rights Reserved.</p>
+            <div class="footer-col">
+                <h3 class="lang-en">Quick Links</h3>
+                <h3 class="lang-id" style="display:none;">Tautan Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="lang-en">Home</a><a href="#home" class="lang-id" style="display:none;">Beranda</a></li>
+                    <li><a href="#about" class="lang-en">About Us</a><a href="#about" class="lang-id" style="display:none;">Tentang Kami</a></li>
+                    <li><a href="#services" class="lang-en">Services</a><a href="#services" class="lang-id" style="display:none;">Layanan</a></li>
+                    <li><a href="#software" class="lang-en">Software</a><a href="#software" class="lang-id" style="display:none;">Perangkat Lunak</a></li>
+                    <li><a href="#contact" class="lang-en">Contact</a><a href="#contact" class="lang-id" style="display:none;">Kontak</a></li>
+                </ul>
             </div>
+            <div class="footer-col">
+                <h3 class="lang-en">Contact</h3>
+                <h3 class="lang-id" style="display:none;">Kontak</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. Contoh Alamat No. 123, Jakarta, Indonesia</li>
+                    <li><i class="fas fa-envelope"></i> info@kmicpartners.com</li>
+                    <li><i class="fas fa-phone"></i> +62 812-3456-7890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="lang-en">&copy; 2025 KMIC Trust and Partners. All rights reserved.</span>
+            <span class="lang-id" style="display:none;">&copy; 2025 KMIC Trust and Partners. Hak cipta dilindungi undang-undang.</span>
         </div>
     </footer>
 
+    <!-- Language & Mobile Menu Script -->
     <script>
-        // Mobile Menu Toggle
+        // Language Switcher
+        const langEnBtn = document.getElementById('lang-en');
+        const langIdBtn = document.getElementById('lang-id');
+
+        function setLang(lang) {
+            document.querySelectorAll('.lang-en').forEach(e => e.style.display = lang === 'en' ? '' : 'none');
+            document.querySelectorAll('.lang-id').forEach(e => e.style.display = lang === 'id' ? '' : 'none');
+            langEnBtn.classList.toggle('active', lang === 'en');
+            langIdBtn.classList.toggle('active', lang === 'id');
+        }
+        langEnBtn.addEventListener('click', () => setLang('en'));
+        langIdBtn.addEventListener('click', () => setLang('id'));
+        // Default language
+        setLang('en');
+
+        // Mobile Menu Script
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
-        
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
+        // Close mobile menu when link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
         });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
+        // Optional: prevent form submission (demo only)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            
-            // Here you would typically send the form data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message about ${service || 'our services'} has been received. We will contact you at ${email} shortly.`);
-            
-            // Reset the form
-            contactForm.reset();
-        });
-        
-        // Sticky header on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
+            alert('Thank you for contacting us! (Demo only, form not submitted)');
         });
     </script>
 </body>
